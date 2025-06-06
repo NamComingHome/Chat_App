@@ -53,7 +53,7 @@ public class Login_Controller implements Initializable {
         String password = tfPassword.getText();
         if(username.equals("user") && password.equals("1234")) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/chat_app/chatview.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/chat_app/client_view.fxml"));
                 Scene scene = new Scene(loader.load());
                 Stage stage = new Stage();
                 stage.setTitle("Chat App");

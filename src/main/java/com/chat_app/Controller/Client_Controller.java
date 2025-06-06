@@ -4,10 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -34,6 +31,9 @@ public class Client_Controller implements Initializable {
     @FXML
     private Button btnSend;
 
+    @FXML
+    private ListView<String> chatbox;
+
     private PrintWriter out;
 
     @Override
@@ -53,7 +53,7 @@ public class Client_Controller implements Initializable {
                    String msg;
                    while ((msg = in.readLine()) != null) {
                        String finalMsg = msg;
-                       Platform.runLater(() -> chatBox.appendText(finalMsg + "\n"));
+                       Platform.runLater(() -> chatbox.getItems().add(finalMsg + "\n"));
                        System.out.println(finalMsg);
                    }
                }catch (IOException e){
@@ -72,7 +72,8 @@ public class Client_Controller implements Initializable {
         if (!text.isEmpty()) {
             out.println(text);
             tfMessage.clear();
-            System.out.println(text);
+            tfMessage.requestFocus();
+            chatbox.scrollTo(chatbox.getItems().size() - 1);
         }
     }
 
@@ -82,6 +83,8 @@ public class Client_Controller implements Initializable {
         if (!text.isEmpty()) {
             out.println(text);
             tfMessage.clear();
+            tfMessage.requestFocus();
+            chatbox.scrollTo(chatbox.getItems().size() - 1);
         }
     }
 }
