@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="501.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chat_app.Controller.Client_Controller">
+    <children>
+        <Label fx:id="lbStatus" layoutX="35.0" layoutY="21.0" text="Status" />
+        <TextField fx:id="tfMessage" layoutX="23.0" layoutY="455.0" onAction="#actionEnter" prefHeight="25.0" prefWidth="323.0" />
+        <Button fx:id="btnSend" layoutX="362.0" layoutY="455.0" mnemonicParsing="false" onAction="#actionSend" text="Send" />
+      <ListView fx:id="chatbox" layoutX="23.0" layoutY="58.0" prefHeight="385.0" prefWidth="405.0" />
+    </children>
+</AnchorPane>
